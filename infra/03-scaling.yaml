@@ -1,0 +1,170 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: SWE40006 Tasks 3.3 and 3.4 - two-AZ ALB/ASG, CloudWatch, SNS and SSM
+Parameters:
+  VpcId: {Type: AWS::EC2::VPC::Id}
+  PublicSubnetA: {Type: AWS::EC2::Subnet::Id}
+  PublicSubnetB: {Type: AWS::EC2::Subnet::Id}
+  AlbSecurityGroupId: {Type: AWS::EC2::SecurityGroup::Id}
+  BackendSecurityGroupId: {Type: AWS::EC2::SecurityGroup::Id}
+  ImageId:
+    Type: AWS::EC2::Image::Id
+    Description: Verified application AMI captured after migration and restore
+  ApplicationSecretArn: {Type: String}
+  DatabaseEndpoint: {Type: String}
+  AlertEmail:
+    Type: String
+    AllowedPattern: '[^\s@]+@[^\s@]+\.[^\s@]+'
+Resources:
+  BackendRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: {Service: ec2.amazonaws.com}
+            Action: sts:AssumeRole
+      ManagedPolicyArns:
+        - !Sub arn:${AWS::Partition}:iam::aws:policy/AmazonSSMManagedInstanceCore
+      Policies:
+        - PolicyName: ReadApplicationSecret
+          PolicyDocument:
+            Version: '2012-10-17'
+            Statement:
+              - Effect: Allow
+                Action: secretsmanager:GetSecretValue
+                Resource: !Ref ApplicationSecretArn
+  BackendProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Roles: [!Ref BackendRole]
+  LoadBalancer:
+    Type: AWS::ElasticLoadBalancingV2::LoadBalancer
+    Properties:
+      Type: application
+      Scheme: internet-facing
+      Subnets: [!Ref PublicSubnetA, !Ref PublicSubnetB]
+      SecurityGroups: [!Ref AlbSecurityGroupId]
+      LoadBalancerAttributes:
+        - {Key: idle_timeout.timeout_seconds, Value: '60'}
+  TargetGroup:
+    Type: AWS::ElasticLoadBalancingV2::TargetGroup
+    Properties:
+      VpcId: !Ref VpcId
+      Port: 80
+      Protocol: HTTP
+      TargetType: instance
+      HealthCheckPath: /health.php
+      HealthCheckIntervalSeconds: 30
+      HealthCheckTimeoutSeconds: 5
+      HealthyThresholdCount: 2
+      UnhealthyThresholdCount: 3
+      Matcher: {HttpCode: '200'}
+      TargetGroupAttributes:
+        - {Key: deregistration_delay.timeout_seconds, Value: '30'}
+  Listener:
+    Type: AWS::ElasticLoadBalancingV2::Listener
+    Properties:
+      LoadBalancerArn: !Ref LoadBalancer
+      Port: 80
+      Protocol: HTTP
+      DefaultActions: [{Type: forward, TargetGroupArn: !Ref TargetGroup}]
+  LaunchTemplate:
+    Type: AWS::EC2::LaunchTemplate
+    Properties:
+      LaunchTemplateData:
+        ImageId: !Ref ImageId
+        InstanceType: t3.micro
+        IamInstanceProfile: {Arn: !GetAtt BackendProfile.Arn}
+        CreditSpecification: {CpuCredits: standard}
+        Monitoring: {Enabled: true}
+        MetadataOptions: {HttpTokens: required, HttpPutResponseHopLimit: 1}
+        NetworkInterfaces:
+          - DeviceIndex: 0
+            AssociatePublicIpAddress: true
+            Groups: [!Ref BackendSecurityGroupId]
+        BlockDeviceMappings:
+          - DeviceName: /dev/xvda
+            Ebs: {VolumeSize: 10, VolumeType: gp3, Encrypted: true, DeleteOnTermination: true}
+        UserData:
+          Fn::Base64: !Sub |
+            #!/bin/bash
+            set -euo pipefail
+            export AWS_DEFAULT_REGION='${AWS::Region}'
+            export APP_SECRET_ID='${ApplicationSecretArn}'
+            /opt/task3/scripts/configure-db.sh '${DatabaseEndpoint}'
+            /opt/task3/scripts/configure-url.sh 'http://${LoadBalancer.DNSName}'
+            systemctl disable --now mariadb || true
+            systemctl enable --now php-fpm httpd amazon-ssm-agent
+            curl --fail --retry 20 --retry-delay 3 http://127.0.0.1/health.php
+  AutoScalingGroup:
+    Type: AWS::AutoScaling::AutoScalingGroup
+    DependsOn: Listener
+    UpdatePolicy:
+      AutoScalingRollingUpdate:
+        MinInstancesInService: 1
+        MaxBatchSize: 1
+        PauseTime: PT3M
+    Properties:
+      MinSize: '2'
+      MaxSize: '4'
+      DesiredCapacity: '2'
+      VPCZoneIdentifier: [!Ref PublicSubnetA, !Ref PublicSubnetB]
+      TargetGroupARNs: [!Ref TargetGroup]
+      HealthCheckType: ELB
+      HealthCheckGracePeriod: 180
+      DefaultInstanceWarmup: 180
+      LaunchTemplate:
+        LaunchTemplateId: !Ref LaunchTemplate
+        Version: !GetAtt LaunchTemplate.LatestVersionNumber
+      MetricsCollection:
+        - Granularity: 1Minute
+          Metrics: [GroupDesiredCapacity, GroupInServiceInstances]
+      Tags:
+        - {Key: Name, Value: task3-wordpress-backend, PropagateAtLaunch: true}
+        - {Key: Project, Value: SWE40006-Task3, PropagateAtLaunch: true}
+  CpuScaling:
+    Type: AWS::AutoScaling::ScalingPolicy
+    Properties:
+      AutoScalingGroupName: !Ref AutoScalingGroup
+      PolicyType: TargetTrackingScaling
+      TargetTrackingConfiguration:
+        TargetValue: 50
+        PredefinedMetricSpecification:
+          PredefinedMetricType: ASGAverageCPUUtilization
+  AlertTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      DisplayName: SWE40006 Task 3 alerts
+  EmailSubscription:
+    Type: AWS::SNS::Subscription
+    Properties:
+      TopicArn: !Ref AlertTopic
+      Protocol: email
+      Endpoint: !Ref AlertEmail
+  CpuAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmDescription: ASG average CPU above 70 percent for two consecutive minutes
+      Namespace: AWS/EC2
+      MetricName: CPUUtilization
+      Dimensions:
+        - {Name: AutoScalingGroupName, Value: !Ref AutoScalingGroup}
+      Statistic: Average
+      Period: 60
+      EvaluationPeriods: 2
+      DatapointsToAlarm: 2
+      Threshold: 70
+      ComparisonOperator: GreaterThanThreshold
+      TreatMissingData: notBreaching
+      AlarmActions: [!Ref AlertTopic]
+      OKActions: [!Ref AlertTopic]
+Outputs:
+  PublicUrl: {Value: !Sub 'http://${LoadBalancer.DNSName}'}
+  LoadBalancerDns: {Value: !GetAtt LoadBalancer.DNSName}
+  LoadBalancerArn: {Value: !Ref LoadBalancer}
+  TargetGroupArn: {Value: !Ref TargetGroup}
+  AutoScalingGroupName: {Value: !Ref AutoScalingGroup}
+  LaunchTemplateId: {Value: !Ref LaunchTemplate}
+  AlarmName: {Value: !Ref CpuAlarm}
+  TopicArn: {Value: !Ref AlertTopic}

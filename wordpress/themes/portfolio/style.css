@@ -1,0 +1,31 @@
+/*
+Theme Name: Portfolio Journal
+Version: 1.0.0
+Requires PHP: 8.3
+Description: A small WordPress journal for SWE40006 cloud deployment.
+Author: Sidhaarth Krishnan
+*/
+:root { color-scheme: light; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; color: #202c35; background: #f4f5f2; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 1120px; margin: auto; padding: 36px 32px 60px; }
+nav { display: flex; justify-content: space-between; gap: 20px; border-bottom: 1px solid #d4dbd6; padding-bottom: 22px; font-size: 13px; }
+a { color: #1c6751; text-underline-offset: 4px; }
+.label { text-transform: uppercase; font-size: 11px; letter-spacing: .14em; font-weight: 700; color: #536b61; }
+header { padding: 52px 0 36px; max-width: 800px; }
+h1 { font-family: Georgia, serif; font-size: clamp(42px, 6vw, 65px); font-weight: 400; line-height: 1.08; letter-spacing: -.035em; margin: 16px 0 20px; }
+.lead { font-size: 18px; line-height: 1.65; color: #53616a; max-width: 650px; }
+.layout { display: grid; grid-template-columns: minmax(0, 1.6fr) minmax(260px, 1fr); gap: 38px; align-items: start; }
+article { padding: 22px 0; border-top: 1px solid #d4dbd6; }
+article h2 { font-family: Georgia, serif; font-size: 25px; font-weight: 400; margin: 8px 0 12px; }
+article p { font-size: 15px; line-height: 1.7; color: #52616a; margin: 0; }
+aside { background: #fff; border: 1px solid #d4dbd6; border-radius: 8px; padding: 25px; }
+aside h2 { font-size: 18px; margin: 0 0 22px; }
+dl { margin: 0; }
+dt { color: #697770; font-size: 12px; margin-top: 18px; }
+dd { margin: 6px 0 0; font-size: 14px; font-weight: 600; line-height: 1.5; }
+.status { display: inline-block; border-radius: 4px; color: #176444; background: #e8f4ed; padding: 5px 9px; font-size: 12px; }
+.note { font-size: 12px; line-height: 1.7; color: #68786f; border-top: 1px solid #e0e5df; margin-top: 22px; padding-top: 16px; }
+footer { margin-top: 35px; padding-top: 20px; border-top: 1px solid #d4dbd6; font-size: 12px; color: #65766b; }
+code { font-family: ui-monospace, monospace; }
+@media (max-width: 720px) { main { padding: 24px 20px; } .layout { grid-template-columns: 1fr; } header { padding-top: 30px; } }
