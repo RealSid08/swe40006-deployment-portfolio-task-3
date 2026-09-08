@@ -1,0 +1,49 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: SWE40006 Task 3.2 - private RDS MariaDB, migration access only on initial server
+Parameters:
+  DatabaseSubnetA: {Type: AWS::EC2::Subnet::Id}
+  DatabaseSubnetB: {Type: AWS::EC2::Subnet::Id}
+  DatabaseSecurityGroupId: {Type: AWS::EC2::SecurityGroup::Id}
+  BootstrapRoleName: {Type: String}
+Resources:
+  SubnetGroup:
+    Type: AWS::RDS::DBSubnetGroup
+    Properties:
+      DBSubnetGroupDescription: Two isolated database subnets
+      SubnetIds: [!Ref DatabaseSubnetA, !Ref DatabaseSubnetB]
+  Database:
+    Type: AWS::RDS::DBInstance
+    DeletionPolicy: Snapshot
+    UpdateReplacePolicy: Snapshot
+    Properties:
+      Engine: mariadb
+      DBInstanceClass: db.t3.micro
+      AllocatedStorage: '20'
+      StorageType: gp3
+      StorageEncrypted: true
+      DBName: wordpress
+      MasterUsername: wpadmin
+      ManageMasterUserPassword: true
+      DBSubnetGroupName: !Ref SubnetGroup
+      VPCSecurityGroups: [!Ref DatabaseSecurityGroupId]
+      PubliclyAccessible: false
+      MultiAZ: false
+      BackupRetentionPeriod: 1
+      AutoMinorVersionUpgrade: true
+      CopyTagsToSnapshot: true
+      Tags: [{Key: Name, Value: task3-wordpress-rds}]
+  MigrationPermission:
+    Type: AWS::IAM::Policy
+    Properties:
+      PolicyName: Task3MigrationSecret
+      Roles: [!Ref BootstrapRoleName]
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Action: secretsmanager:GetSecretValue
+            Resource: !GetAtt Database.MasterUserSecret.SecretArn
+Outputs:
+  DatabaseEndpoint: {Value: !GetAtt Database.Endpoint.Address}
+  DatabaseId: {Value: !Ref Database}
+  MasterSecretArn: {Value: !GetAtt Database.MasterUserSecret.SecretArn}
