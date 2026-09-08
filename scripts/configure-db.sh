@@ -4,6 +4,12 @@ set -euo pipefail
 : "${APP_SECRET_ID:?Set APP_SECRET_ID}"
 : "${AWS_DEFAULT_REGION:?Set AWS_DEFAULT_REGION}"
 db_host=${1:?Usage: configure-db.sh DATABASE_HOST}
+if [[ "$db_host" != localhost ]]; then
+  curl -fsSL --retry 3 https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem \
+    -o /etc/pki/ca-trust/source/anchors/task3-rds.pem
+  chmod 644 /etc/pki/ca-trust/source/anchors/task3-rds.pem
+  update-ca-trust
+fi
 umask 077
 secret_file=$(mktemp)
 trap 'rm -f "$secret_file"' EXIT

@@ -6,6 +6,10 @@ define('DB_NAME', $db['database']);
 define('DB_USER', $db['username']);
 define('DB_PASSWORD', $db['password']);
 define('DB_HOST', $db['host']);
+if ($db['host'] !== 'localhost') {
+    // mysqlnd verifies the server certificate against the system CA trust store.
+    define('MYSQL_CLIENT_FLAGS', MYSQLI_CLIENT_SSL);
+}
 define('DB_CHARSET', 'utf8mb4');
 define('DB_COLLATE', '');
 define('WP_HOME', $site['url']);

@@ -7,6 +7,10 @@ master_secret=${2:?Supply the RDS-managed master secret ARN}
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
 # shellcheck source=/dev/null
 source /opt/task3/environment
+curl -fsSL --retry 3 https://truststore.pki.rds.amazonaws.com/global/global-bundle.pem \
+  -o /etc/pki/ca-trust/source/anchors/task3-rds.pem
+chmod 644 /etc/pki/ca-trust/source/anchors/task3-rds.pem
+update-ca-trust
 work=$(mktemp -d)
 trap 'rm -rf "$work"' EXIT
 if ! python3 -c 'import json; assert json.load(open("/etc/portfolio-db.json"))["host"] == "localhost"'; then
@@ -27,7 +31,7 @@ from pathlib import Path
 c=json.loads(Path(sys.argv[1]).read_text())
 def quote(s):
     return '"'+s.replace('\\','\\\\').replace('"','\\"')+'"'
-Path(sys.argv[2]).write_text('[client]\n'+''.join(
+Path(sys.argv[2]).write_text('[client]\nssl-ca=/etc/pki/ca-trust/source/anchors/task3-rds.pem\nssl-verify-server-cert\n'+''.join(
     f'{k}={quote(v)}\n' for k,v in {'host':sys.argv[3],
     'user':c['username'],'password':c['password']}.items()))
 PY
@@ -36,7 +40,7 @@ python3 - <<'PY' | mariadb --defaults-extra-file="$work/client.cnf"
 import json,re
 c=json.load(open('/etc/portfolio-db.json'))
 assert re.fullmatch(r'[A-Za-z0-9]+',c['password'])
-print("CREATE USER IF NOT EXISTS 'wpapp'@'%' IDENTIFIED BY '%s';" % c['password'])
+print("CREATE USER IF NOT EXISTS 'wpapp'@'%%' IDENTIFIED BY '%s';" % c['password'])
 print("GRANT ALL PRIVILEGES ON wordpress.* TO 'wpapp'@'%';")
 PY
 cp /etc/portfolio-db.json "$work/original-db.json"
