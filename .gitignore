@@ -8,4 +8,6 @@ __pycache__/
 *.key
 *.sql
 .env*
-report/tmp/
+*.md
+*.markdown
+report/
