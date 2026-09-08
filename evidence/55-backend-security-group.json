@@ -1,0 +1,59 @@
+{
+    "SecurityGroups": [
+        {
+            "GroupId": "sg-05ad0cd2dc3c08320",
+            "IpPermissionsEgress": [
+                {
+                    "IpProtocol": "-1",
+                    "UserIdGroupPairs": [],
+                    "IpRanges": [
+                        {
+                            "CidrIp": "0.0.0.0/0"
+                        }
+                    ],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ],
+            "Tags": [
+                {
+                    "Key": "aws:cloudformation:logical-id",
+                    "Value": "BackendSecurityGroup"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-name",
+                    "Value": "task3-foundation"
+                },
+                {
+                    "Key": "Project",
+                    "Value": "SWE40006-Task3"
+                },
+                {
+                    "Key": "aws:cloudformation:stack-id",
+                    "Value": "arn:aws:cloudformation:ap-southeast-2:373665158296:stack/task3-foundation/583fdc20-ab8b-11f1-b092-065ff5e75385"
+                }
+            ],
+            "VpcId": "vpc-0dbcc08f047770478",
+            "SecurityGroupArn": "arn:aws:ec2:ap-southeast-2:373665158296:security-group/sg-05ad0cd2dc3c08320",
+            "OwnerId": "373665158296",
+            "GroupName": "task3-foundation-BackendSecurityGroup-Nd6mOb5Di1vD",
+            "Description": "ALB-only HTTP, no SSH; outbound HTTPS permits SSM",
+            "IpPermissions": [
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": 80,
+                    "ToPort": 80,
+                    "UserIdGroupPairs": [
+                        {
+                            "UserId": "373665158296",
+                            "GroupId": "sg-0a5b6724c671b82ca"
+                        }
+                    ],
+                    "IpRanges": [],
+                    "Ipv6Ranges": [],
+                    "PrefixListIds": []
+                }
+            ]
+        }
+    ]
+}

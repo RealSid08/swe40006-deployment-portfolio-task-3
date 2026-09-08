@@ -1,0 +1,9 @@
+{
+    "status": "healthy",
+    "application": "WordPress deployment portfolio",
+    "database": "Local MariaDB on EC2",
+    "published_posts": 3,
+    "node": "510ad5d2",
+    "php": "8.3.33",
+    "checked_at": "2026-09-08T13:55:37+00:00"
+}

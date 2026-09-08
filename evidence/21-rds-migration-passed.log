@@ -1,0 +1,47 @@
+Application database configuration written outside the web root.
+Existing database exported from EC2 and imported into RDS.
+Published content before and after migration:
+9b1e6df67e6349907a079eabf5f48acbaf1a8a83b8ccbdcc490ab381e89074d6  /tmp/tmp.vZ0Aj7O8S2/before.json
+9b1e6df67e6349907a079eabf5f48acbaf1a8a83b8ccbdcc490ab381e89074d6  /tmp/tmp.vZ0Aj7O8S2/after.json
+Content comparison: identical
+Removed "/etc/systemd/system/multi-user.target.wants/mariadb.service".
+Removed "/etc/systemd/system/mysql.service".
+Removed "/etc/systemd/system/mysqld.service".
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 503
+Warning: Problem : HTTP error. Will retry in 2 seconds. 10 retries left.
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 503
+Warning: Problem : HTTP error. Will retry in 2 seconds. 9 retries left.
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 503
+Warning: Problem : HTTP error. Will retry in 2 seconds. 8 retries left.
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 503
+Warning: Problem : HTTP error. Will retry in 2 seconds. 7 retries left.
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 503
+Warning: Problem : HTTP error. Will retry in 2 seconds. 6 retries left.
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 503
+Warning: Problem : HTTP error. Will retry in 2 seconds. 5 retries left.
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 503
+Warning: Problem : HTTP error. Will retry in 2 seconds. 4 retries left.
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0
+curl: (22) The requested URL returned error: 503
+Warning: Problem : HTTP error. Will retry in 2 seconds. 3 retries left.
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0{
+    "status": "healthy",
+    "application": "WordPress deployment portfolio",
+    "database": "Amazon RDS MariaDB",
+    "published_posts": 3,
+    "database_tls": "TLS_AES_256_GCM_SHA384",
+    "node": "510ad5d2",
+    "php": "8.3.33",
+    "checked_at": "2026-09-08T14:09:44+00:00"
+}
+Local MariaDB stopped; application health passed using RDS.
+100   282   0   282   0     0 13910     0  --:--:-- --:--:-- --:--:-- 14100

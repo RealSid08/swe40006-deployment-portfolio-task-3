@@ -1,0 +1,10 @@
+{
+  "url": "http://task3--LoadB-SWRuo2lnwDRm-1626497768.ap-southeast-2.elb.amazonaws.com",
+  "successful_requests": 20,
+  "database": "Amazon RDS MariaDB",
+  "published_posts": 3,
+  "backend_responses": {
+    "83335326": 10,
+    "e489dba6": 10
+  }
+}

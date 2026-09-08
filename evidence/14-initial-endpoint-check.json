@@ -1,0 +1,9 @@
+{
+  "url": "http://54.252.195.90",
+  "successful_requests": 5,
+  "database": "Local MariaDB on EC2",
+  "published_posts": 3,
+  "backend_responses": {
+    "510ad5d2": 5
+  }
+}

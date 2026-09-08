@@ -1,0 +1,11 @@
+{
+    "SuccessfulInstanceCreditSpecifications": [
+        {
+            "InstanceId": "i-00f39a0ea04c9e2bf"
+        },
+        {
+            "InstanceId": "i-076e83f342e84ef01"
+        }
+    ],
+    "UnsuccessfulInstanceCreditSpecifications": []
+}

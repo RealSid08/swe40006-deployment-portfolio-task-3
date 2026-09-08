@@ -1,0 +1,10 @@
+Manual application file backup uploaded.
+Object: backups/wordpress-20260908T140202Z.tar.gz
+SHA-256: ac985bf8bcc42a95565d74a748cd623956d0059ff31785dbc9ee541f5611239c
+Database credentials and signing salts are outside the web root and not in this archive.
+{
+    "Bytes": 35373205,
+    "Encryption": "AES256",
+    "Version": "P7l7_sHXaYuaO_aDg_2IFFeKfi7G6.38",
+    "SHA256": "ac985bf8bcc42a95565d74a748cd623956d0059ff31785dbc9ee541f5611239c"
+}

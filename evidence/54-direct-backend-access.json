@@ -1,0 +1,15 @@
+{
+  "checked_at": "2026-09-08T14:29:00.874162+00:00",
+  "checks": [
+    {
+      "backend_public_ip": "15.134.141.213",
+      "port": 22,
+      "result": "TimeoutError"
+    },
+    {
+      "backend_public_ip": "15.134.141.213",
+      "port": 80,
+      "result": "TimeoutError"
+    }
+  ]
+}

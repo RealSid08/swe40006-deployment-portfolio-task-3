@@ -1,0 +1,27 @@
+
+status: done
+/usr/local/bin/wp: OK
+Application database configuration written outside the web root.
+Success: WordPress installation verifies against checksums.
+Success: WordPress installed successfully.
+Success: Switched to 'Portfolio Journal' theme.
+Success: Deleted post 1.
+Success: Deleted post 2.
+Success: Updated 'blogdescription' option.
+Success: Updated 'default_comment_status' option.
+Success: Created post 5.
+Success: Created post 6.
+Success: Created post 7.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0{
+    "status": "healthy",
+    "application": "WordPress deployment portfolio",
+    "database": "Local MariaDB on EC2",
+    "published_posts": 3,
+    "node": "510ad5d2",
+    "php": "8.3.33",
+    "checked_at": "2026-09-08T13:55:12+00:00"
+}
+WordPress installed and health check passed.
+100   238   0   238   0     0 34984     0  --:--:-- --:--:-- --:--:-- 39666

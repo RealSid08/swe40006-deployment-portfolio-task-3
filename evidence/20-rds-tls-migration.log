@@ -1,0 +1,3 @@
+Traceback (most recent call last):
+  File "<stdin>", line 4, in <module>
+ValueError: unsupported format character ''' (0x27) at index 36

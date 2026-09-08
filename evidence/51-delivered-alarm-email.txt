@@ -1,0 +1,39 @@
+Verified Gmail message: 1a0816a1ab08195e
+Received: 2026-09-08 14:26:48 UTC
+From: SWE40006 Task 3 alerts <no-reply@sns.amazonaws.com>
+Subject: ALARM: "task3-scaling-CpuAlarm-HQlvry4ylAGA" in Asia Pacific (Sydney)
+Recipient address and unsubscribe link omitted from public evidence.
+
+You are receiving this email because your Amazon CloudWatch Alarm "task3-scaling-CpuAlarm-HQlvry4ylAGA" in the Asia Pacific (Sydney) region has entered the ALARM state, because "Threshold Crossed: 2 out of the last 2 datapoints [99.99249236724003 (08/09/26 14:25:00), 82.73815710971624 (08/09/26 14:24:00)] were greater than the threshold (70.0) (minimum 2 datapoints for OK -> ALARM transition)." at "Tuesday 08 September, 2026 14:26:48 UTC".
+
+View this alarm in the AWS Management Console:
+https://ap-southeast-2.console.aws.amazon.com/cloudwatch/deeplink.js?region=ap-southeast-2#alarmsV2:alarm/task3-scaling-CpuAlarm-HQlvry4ylAGA
+
+Alarm Details:
+- Name:                       task3-scaling-CpuAlarm-HQlvry4ylAGA
+- Description:                ASG average CPU above 70 percent for two consecutive minutes
+- State Change:               OK -> ALARM
+- Reason for State Change:    Threshold Crossed: 2 out of the last 2 datapoints [99.99249236724003 (08/09/26 14:25:00), 82.73815710971624 (08/09/26 14:24:00)] were greater than the threshold (70.0) (minimum 2 datapoints for OK -> ALARM transition).
+- Timestamp:                  Tuesday 08 September, 2026 14:26:48 UTC
+- AWS Account:                373665158296
+- Alarm Arn:                  arn:aws:cloudwatch:ap-southeast-2:373665158296:alarm:task3-scaling-CpuAlarm-HQlvry4ylAGA
+
+Threshold:
+- The alarm is in the ALARM state when the metric is GreaterThanThreshold 70.0 for at least 2 of the last 2 period(s) of 60 seconds. 
+
+Monitored Metric:
+- MetricNamespace:                     AWS/EC2
+- MetricName:                          CPUUtilization
+- Dimensions:                          [AutoScalingGroupName = task3-scaling-AutoScalingGroup-7IwO55RbEuL5]
+- Period:                              60 seconds
+- Statistic:                           Average
+- Unit:                                not specified
+- TreatMissingData:                    notBreaching
+
+
+State Change Actions:
+- OK: [arn:aws:sns:ap-southeast-2:373665158296:task3-scaling-AlertTopic-gGKSSDqIahJA]
+- ALARM: [arn:aws:sns:ap-southeast-2:373665158296:task3-scaling-AlertTopic-gGKSSDqIahJA]
+- INSUFFICIENT_DATA: 
+
+

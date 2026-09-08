@@ -1,0 +1,82 @@
+{
+    "CommandInvocations": [
+        {
+            "CommandId": "31cb91e7-8e49-4b0e-b3cf-14fc0012fab6",
+            "InstanceId": "i-076e83f342e84ef01",
+            "InstanceName": "ip-10-30-2-128.ap-southeast-2.compute.internal",
+            "Comment": "Task 3.4: bounded CPU load after Python compatibility fix",
+            "DocumentName": "AWS-RunShellScript",
+            "DocumentVersion": "$DEFAULT",
+            "RequestedDateTime": "2026-09-09T00:23:23.614000+10:00",
+            "Status": "Success",
+            "StatusDetails": "Success",
+            "StandardOutputUrl": "",
+            "StandardErrorUrl": "",
+            "CommandPlugins": [
+                {
+                    "Name": "aws:runShellScript",
+                    "Status": "Success",
+                    "StatusDetails": "Success",
+                    "ResponseCode": 0,
+                    "ResponseStartDateTime": "2026-09-09T00:23:23.790000+10:00",
+                    "ResponseFinishDateTime": "2026-09-09T00:27:23.931000+10:00",
+                    "Output": "CPU test started: 2026-09-08T14:23:23.825911+00:00\nCPU test finished: 2026-09-08T14:27:23.924388+00:00\n",
+                    "StandardOutputUrl": "",
+                    "StandardErrorUrl": "",
+                    "OutputS3Region": "ap-southeast-2",
+                    "OutputS3BucketName": "",
+                    "OutputS3KeyPrefix": ""
+                }
+            ],
+            "ServiceRole": "",
+            "NotificationConfig": {
+                "NotificationArn": "",
+                "NotificationEvents": [],
+                "NotificationType": ""
+            },
+            "CloudWatchOutputConfig": {
+                "CloudWatchLogGroupName": "",
+                "CloudWatchOutputEnabled": false
+            }
+        },
+        {
+            "CommandId": "31cb91e7-8e49-4b0e-b3cf-14fc0012fab6",
+            "InstanceId": "i-00f39a0ea04c9e2bf",
+            "InstanceName": "ip-10-30-1-66.ap-southeast-2.compute.internal",
+            "Comment": "Task 3.4: bounded CPU load after Python compatibility fix",
+            "DocumentName": "AWS-RunShellScript",
+            "DocumentVersion": "$DEFAULT",
+            "RequestedDateTime": "2026-09-09T00:23:23.607000+10:00",
+            "Status": "Success",
+            "StatusDetails": "Success",
+            "StandardOutputUrl": "",
+            "StandardErrorUrl": "",
+            "CommandPlugins": [
+                {
+                    "Name": "aws:runShellScript",
+                    "Status": "Success",
+                    "StatusDetails": "Success",
+                    "ResponseCode": 0,
+                    "ResponseStartDateTime": "2026-09-09T00:23:23.775000+10:00",
+                    "ResponseFinishDateTime": "2026-09-09T00:27:23.919000+10:00",
+                    "Output": "CPU test started: 2026-09-08T14:23:23.811414+00:00\nCPU test finished: 2026-09-08T14:27:23.912663+00:00\n",
+                    "StandardOutputUrl": "",
+                    "StandardErrorUrl": "",
+                    "OutputS3Region": "ap-southeast-2",
+                    "OutputS3BucketName": "",
+                    "OutputS3KeyPrefix": ""
+                }
+            ],
+            "ServiceRole": "",
+            "NotificationConfig": {
+                "NotificationArn": "",
+                "NotificationEvents": [],
+                "NotificationType": ""
+            },
+            "CloudWatchOutputConfig": {
+                "CloudWatchLogGroupName": "",
+                "CloudWatchOutputEnabled": false
+            }
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+status: done
+time: Tue, 08 Sep 2026 13:50:00 +0000
+detail:
+DataSourceEc2
+x86_64
+PHP 8.3.33 (cli) (built: Jul 28 2026 17:56:10) (NTS gcc x86_64)
+Copyright (c) The PHP Group
+Zend Engine v4.3.33, Copyright (c) Zend Technologies
+    with Zend OPcache v8.3.33, Copyright (c), by Zend Technologies
+Server version: Apache/2.4.68 (Amazon Linux)
+Server built:   Jun  8 2026 00:00:00
+mariadb  Ver 15.1 Distrib 10.5.29-MariaDB, for Linux (x86_64) using  EditLine wrapper
+7.1
+ID	post_title	post_status
+7	Making the web tier replaceable	publish
+6	Separating the application from its data	publish
+5	A small application, a complete deployment	publish
+active
+active
+active
+active

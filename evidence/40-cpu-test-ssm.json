@@ -1,0 +1,82 @@
+{
+    "CommandInvocations": [
+        {
+            "CommandId": "ce7068f9-9b99-4f1d-9b4c-824f787d361b",
+            "InstanceId": "i-076e83f342e84ef01",
+            "InstanceName": "ip-10-30-2-128.ap-southeast-2.compute.internal",
+            "Comment": "Task 3.4: bounded 240-second CPU alarm verification",
+            "DocumentName": "AWS-RunShellScript",
+            "DocumentVersion": "$DEFAULT",
+            "RequestedDateTime": "2026-09-09T00:22:14.842000+10:00",
+            "Status": "Failed",
+            "StatusDetails": "Failed",
+            "StandardOutputUrl": "",
+            "StandardErrorUrl": "",
+            "CommandPlugins": [
+                {
+                    "Name": "aws:runShellScript",
+                    "Status": "Failed",
+                    "StatusDetails": "Failed",
+                    "ResponseCode": 1,
+                    "ResponseStartDateTime": "2026-09-09T00:22:15.181000+10:00",
+                    "ResponseFinishDateTime": "2026-09-09T00:22:15.226000+10:00",
+                    "Output": "\n----------ERROR-------\nTraceback (most recent call last):\n  File \"<stdin>\", line 22, in <module>\nAttributeError: module 'datetime' has no attribute 'UTC'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<stdin>\", line 31, in <module>\nAttributeError: module 'datetime' has no attribute 'UTC'\nfailed to run commands: exit status 1",
+                    "StandardOutputUrl": "",
+                    "StandardErrorUrl": "",
+                    "OutputS3Region": "ap-southeast-2",
+                    "OutputS3BucketName": "",
+                    "OutputS3KeyPrefix": ""
+                }
+            ],
+            "ServiceRole": "",
+            "NotificationConfig": {
+                "NotificationArn": "",
+                "NotificationEvents": [],
+                "NotificationType": ""
+            },
+            "CloudWatchOutputConfig": {
+                "CloudWatchLogGroupName": "",
+                "CloudWatchOutputEnabled": false
+            }
+        },
+        {
+            "CommandId": "ce7068f9-9b99-4f1d-9b4c-824f787d361b",
+            "InstanceId": "i-00f39a0ea04c9e2bf",
+            "InstanceName": "ip-10-30-1-66.ap-southeast-2.compute.internal",
+            "Comment": "Task 3.4: bounded 240-second CPU alarm verification",
+            "DocumentName": "AWS-RunShellScript",
+            "DocumentVersion": "$DEFAULT",
+            "RequestedDateTime": "2026-09-09T00:22:14.834000+10:00",
+            "Status": "Failed",
+            "StatusDetails": "Failed",
+            "StandardOutputUrl": "",
+            "StandardErrorUrl": "",
+            "CommandPlugins": [
+                {
+                    "Name": "aws:runShellScript",
+                    "Status": "Failed",
+                    "StatusDetails": "Failed",
+                    "ResponseCode": 1,
+                    "ResponseStartDateTime": "2026-09-09T00:22:15.150000+10:00",
+                    "ResponseFinishDateTime": "2026-09-09T00:22:15.194000+10:00",
+                    "Output": "\n----------ERROR-------\nTraceback (most recent call last):\n  File \"<stdin>\", line 22, in <module>\nAttributeError: module 'datetime' has no attribute 'UTC'\n\nDuring handling of the above exception, another exception occurred:\n\nTraceback (most recent call last):\n  File \"<stdin>\", line 31, in <module>\nAttributeError: module 'datetime' has no attribute 'UTC'\nfailed to run commands: exit status 1",
+                    "StandardOutputUrl": "",
+                    "StandardErrorUrl": "",
+                    "OutputS3Region": "ap-southeast-2",
+                    "OutputS3BucketName": "",
+                    "OutputS3KeyPrefix": ""
+                }
+            ],
+            "ServiceRole": "",
+            "NotificationConfig": {
+                "NotificationArn": "",
+                "NotificationEvents": [],
+                "NotificationType": ""
+            },
+            "CloudWatchOutputConfig": {
+                "CloudWatchLogGroupName": "",
+                "CloudWatchOutputEnabled": false
+            }
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+[
+    {
+        "Name": "SWE40006-Task3-20USD",
+        "Limit": {
+            "Amount": "20.0",
+            "Unit": "USD"
+        },
+        "Spend": {
+            "ActualSpend": {
+                "Amount": "0.0",
+                "Unit": "USD"
+            }
+        }
+    }
+]

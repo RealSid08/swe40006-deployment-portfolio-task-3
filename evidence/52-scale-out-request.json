@@ -1,0 +1,50 @@
+{
+    "Activities": [
+        {
+            "ActivityId": "6b168205-aed7-9d60-f87f-f45843b34f7b",
+            "AutoScalingGroupName": "task3-scaling-AutoScalingGroup-7IwO55RbEuL5",
+            "Description": "Launching a new EC2 instance: i-0bb92c27a165aad8c",
+            "Cause": "At 2026-09-08T14:28:27Z a monitor alarm TargetTracking-task3-scaling-AutoScalingGroup-7IwO55RbEuL5-AlarmHigh-69f2d5ab-da2f-4c81-9466-29a9e5b193da in state ALARM triggered policy task3-scaling-CpuScaling-ew3VoOqUdntK changing the desired capacity from 2 to 4.  At 2026-09-08T14:28:33Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 2 to 4.",
+            "StartTime": "2026-09-08T14:28:34.919000+00:00",
+            "StatusCode": "PreInService",
+            "Progress": 30,
+            "Details": "{\"Availability Zone ID\":\"apse2-az3\",\"Subnet ID\":\"subnet-008ede69c257c5f4f\",\"Availability Zone\":\"ap-southeast-2b\",\"InvokingAlarms\":[{\"AlarmArn\":\"arn:aws:cloudwatch:ap-southeast-2:373665158296:alarm:TargetTracking-task3-scaling-AutoScalingGroup-7IwO55RbEuL5-AlarmHigh-69f2d5ab-da2f-4c81-9466-29a9e5b193da\",\"Trigger\":{\"MetricName\":\"CPUUtilization\",\"EvaluateLowSampleCountPercentile\":\"\",\"ComparisonOperator\":\"GreaterThanThreshold\",\"TreatMissingData\":\"\",\"Statistic\":\"AVERAGE\",\"StatisticType\":\"Statistic\",\"Period\":60,\"EvaluationPeriods\":3,\"Unit\":null,\"Namespace\":\"AWS/EC2\",\"Threshold\":50},\"AlarmName\":\"TargetTracking-task3-scaling-AutoScalingGroup-7IwO55RbEuL5-AlarmHigh-69f2d5ab-da2f-4c81-9466-29a9e5b193da\",\"AlarmDescription\":\"DO NOT EDIT OR DELETE. For TargetTrackingScaling policy arn:aws:autoscaling:ap-southeast-2:373665158296:scalingPolicy:869cbeaa-eec7-44bb-a02d-6216292ac18c:autoScalingGroupName/task3-scaling-AutoScalingGroup-7IwO55RbEuL5:policyName/task3-scaling-CpuScalin\",\"AWSAccountId\":\"373665158296\",\"OldStateValue\":\"ALARM\",\"Region\":\"Asia Pacific (Sydney)\",\"NewStateValue\":\"ALARM\",\"AlarmConfigurationUpdatedTimestamp\":1788877190395,\"StateChangeTime\":1788877647435}]}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-southeast-2:373665158296:autoScalingGroup:7c84864b-04ec-4bdf-b701-f41c4a431029:autoScalingGroupName/task3-scaling-AutoScalingGroup-7IwO55RbEuL5"
+        },
+        {
+            "ActivityId": "c8d68205-aed6-df05-3d02-1e4481febd77",
+            "AutoScalingGroupName": "task3-scaling-AutoScalingGroup-7IwO55RbEuL5",
+            "Description": "Launching a new EC2 instance: i-087efba22378e2e7b",
+            "Cause": "At 2026-09-08T14:28:27Z a monitor alarm TargetTracking-task3-scaling-AutoScalingGroup-7IwO55RbEuL5-AlarmHigh-69f2d5ab-da2f-4c81-9466-29a9e5b193da in state ALARM triggered policy task3-scaling-CpuScaling-ew3VoOqUdntK changing the desired capacity from 2 to 4.  At 2026-09-08T14:28:33Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 2 to 4.",
+            "StartTime": "2026-09-08T14:28:34.871000+00:00",
+            "StatusCode": "PreInService",
+            "Progress": 30,
+            "Details": "{\"Availability Zone ID\":\"apse2-az1\",\"Subnet ID\":\"subnet-07c80925e1ec54905\",\"Availability Zone\":\"ap-southeast-2a\",\"InvokingAlarms\":[{\"AlarmArn\":\"arn:aws:cloudwatch:ap-southeast-2:373665158296:alarm:TargetTracking-task3-scaling-AutoScalingGroup-7IwO55RbEuL5-AlarmHigh-69f2d5ab-da2f-4c81-9466-29a9e5b193da\",\"Trigger\":{\"MetricName\":\"CPUUtilization\",\"EvaluateLowSampleCountPercentile\":\"\",\"ComparisonOperator\":\"GreaterThanThreshold\",\"TreatMissingData\":\"\",\"Statistic\":\"AVERAGE\",\"StatisticType\":\"Statistic\",\"Period\":60,\"EvaluationPeriods\":3,\"Unit\":null,\"Namespace\":\"AWS/EC2\",\"Threshold\":50},\"AlarmName\":\"TargetTracking-task3-scaling-AutoScalingGroup-7IwO55RbEuL5-AlarmHigh-69f2d5ab-da2f-4c81-9466-29a9e5b193da\",\"AlarmDescription\":\"DO NOT EDIT OR DELETE. For TargetTrackingScaling policy arn:aws:autoscaling:ap-southeast-2:373665158296:scalingPolicy:869cbeaa-eec7-44bb-a02d-6216292ac18c:autoScalingGroupName/task3-scaling-AutoScalingGroup-7IwO55RbEuL5:policyName/task3-scaling-CpuScalin\",\"AWSAccountId\":\"373665158296\",\"OldStateValue\":\"ALARM\",\"Region\":\"Asia Pacific (Sydney)\",\"NewStateValue\":\"ALARM\",\"AlarmConfigurationUpdatedTimestamp\":1788877190395,\"StateChangeTime\":1788877647435}]}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-southeast-2:373665158296:autoScalingGroup:7c84864b-04ec-4bdf-b701-f41c4a431029:autoScalingGroupName/task3-scaling-AutoScalingGroup-7IwO55RbEuL5"
+        },
+        {
+            "ActivityId": "60668205-8edc-e8b5-b3dd-c9ad723faaa0",
+            "AutoScalingGroupName": "task3-scaling-AutoScalingGroup-7IwO55RbEuL5",
+            "Description": "Launching a new EC2 instance: i-076e83f342e84ef01",
+            "Cause": "At 2026-09-08T14:19:39Z a user request update of AutoScalingGroup constraints to min: 2, max: 4, desired: 2 changing the desired capacity from 0 to 2.  At 2026-09-08T14:19:49Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 0 to 2.",
+            "StartTime": "2026-09-08T14:19:50.970000+00:00",
+            "EndTime": "2026-09-08T14:22:55+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"apse2-az3\",\"Subnet ID\":\"subnet-008ede69c257c5f4f\",\"Availability Zone\":\"ap-southeast-2b\"}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-southeast-2:373665158296:autoScalingGroup:7c84864b-04ec-4bdf-b701-f41c4a431029:autoScalingGroupName/task3-scaling-AutoScalingGroup-7IwO55RbEuL5"
+        },
+        {
+            "ActivityId": "47468205-8edb-eb0a-180f-84fcb8f81d90",
+            "AutoScalingGroupName": "task3-scaling-AutoScalingGroup-7IwO55RbEuL5",
+            "Description": "Launching a new EC2 instance: i-00f39a0ea04c9e2bf",
+            "Cause": "At 2026-09-08T14:19:39Z a user request update of AutoScalingGroup constraints to min: 2, max: 4, desired: 2 changing the desired capacity from 0 to 2.  At 2026-09-08T14:19:49Z an instance was started in response to a difference between desired and actual capacity, increasing the capacity from 0 to 2.",
+            "StartTime": "2026-09-08T14:19:50.906000+00:00",
+            "EndTime": "2026-09-08T14:22:55+00:00",
+            "StatusCode": "Successful",
+            "Progress": 100,
+            "Details": "{\"Availability Zone ID\":\"apse2-az1\",\"Subnet ID\":\"subnet-07c80925e1ec54905\",\"Availability Zone\":\"ap-southeast-2a\"}",
+            "AutoScalingGroupARN": "arn:aws:autoscaling:ap-southeast-2:373665158296:autoScalingGroup:7c84864b-04ec-4bdf-b701-f41c4a431029:autoScalingGroupName/task3-scaling-AutoScalingGroup-7IwO55RbEuL5"
+        }
+    ]
+}

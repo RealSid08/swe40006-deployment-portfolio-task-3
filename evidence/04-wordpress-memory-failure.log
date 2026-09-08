@@ -1,0 +1,7 @@
+
+status: done
+/usr/local/bin/wp: OK
+Application database configuration written outside the web root.
+Downloading WordPress 7.1 (en_US)...
+md5 hash verified: 51db0c3bd4f2332b25f9c23e17983047
+PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 36864 bytes) in phar:///usr/local/bin/wp/vendor/wp-cli/wp-cli/php/WP_CLI/Extractor.php on line 100

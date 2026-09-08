@@ -1,0 +1,54 @@
+
+status: done
+/usr/local/bin/wp: OK
+Application database configuration written outside the web root.
+Downloading WordPress 7.1 (en_US)...
+md5 hash verified: 51db0c3bd4f2332b25f9c23e17983047
+Success: WordPress downloaded.
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/AbstractApiBasedModelMetadataDirectory.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/ListModelsApiBasedProviderAvailability.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/GenerateTextApiBasedProviderAvailability.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/Contracts/ApiBasedModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/OpenAiCompatibleImplementation/AbstractOpenAiCompatibleModelMetadataDirectory.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/OpenAiCompatibleImplementation/AbstractOpenAiCompatibleTextGenerationModel.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/OpenAiCompatibleImplementation/AbstractOpenAiCompatibleImageGenerationModel.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Models/TextGeneration/Contracts/TextGenerationModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Models/TextGeneration/Contracts/TextGenerationOperationModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Models/VideoGeneration/Contracts/VideoGenerationModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Models/VideoGeneration/Contracts/VideoGenerationOperationModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Models/ImageGeneration/Contracts/ImageGenerationModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Models/ImageGeneration/Contracts/ImageGenerationOperationModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Models/SpeechGeneration/Contracts/SpeechGenerationOperationModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Models/SpeechGeneration/Contracts/SpeechGenerationModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Models/TextToSpeechConversion/Contracts/TextToSpeechConversionOperationModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Models/TextToSpeechConversion/Contracts/TextToSpeechConversionModelInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Contracts/ProviderWithOperationsHandlerInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/src/Providers/Http/Contracts/WithRequestAuthenticationInterface.php
+Warning: File doesn't exist: wp-includes/php-ai-client/third-party/Http/Discovery/Strategy/CommonPsr17ClassesStrategy.php
+Warning: File doesn't exist: wp-includes/php-ai-client/third-party/Http/Discovery/Exception/ClassInstantiationFailedException.php
+Warning: File doesn't exist: wp-includes/php-ai-client/third-party/Http/Discovery/Exception/DiscoveryFailedException.php
+Warning: File doesn't exist: wp-includes/php-ai-client/third-party/Http/Discovery/Exception/NoCandidateFoundException.php
+Warning: File doesn't exist: wp-includes/php-ai-client/third-party/Http/Discovery/Exception/StrategyUnavailableException.php
+Warning: File doesn't exist: wp-includes/php-ai-client/third-party/Http/Discovery/Exception/PuliUnavailableException.php
+Warning: File should not exist: wp-includes/php-ai-client/third-party/Http/Discovery/Strategy/CommonPsr17ClassesStrategy.p
+Warning: File should not exist: wp-includes/php-ai-client/third-party/Http/Discovery/Exception/StrategyUnavailableExceptio
+Warning: File should not exist: wp-includes/php-ai-client/third-party/Http/Discovery/Exception/PuliUnavailableException.ph
+Warning: File should not exist: wp-includes/php-ai-client/third-party/Http/Discovery/Exception/NoCandidateFoundException.p
+Warning: File should not exist: wp-includes/php-ai-client/third-party/Http/Discovery/Exception/DiscoveryFailedException.ph
+Warning: File should not exist: wp-includes/php-ai-client/third-party/Http/Discovery/Exception/ClassInstantiationFailedExc
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/OpenAiCompatibleImplementation/AbstractOpenAiCompa
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/Models/VideoGeneration/Contracts/VideoGenerationOp
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/Models/VideoGeneration/Contracts/VideoGenerationMo
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/Models/TextToSpeechConversion/Contracts/TextToSpee
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/Models/TextGeneration/Contracts/TextGenerationOper
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/Models/TextGeneration/Contracts/TextGenerationMode
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/Models/SpeechGeneration/Contracts/SpeechGeneration
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/Models/ImageGeneration/Contracts/ImageGenerationOp
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/Models/ImageGeneration/Contracts/ImageGenerationMo
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/Http/Contracts/WithRequestAuthenticationInterface.
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/Contracts/ProviderWithOperationsHandlerInterface.p
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/ListModelsApiBasedProviderA
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/GenerateTextApiBasedProvide
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/Contracts/ApiBasedModelInte
+Warning: File should not exist: wp-includes/php-ai-client/src/Providers/ApiBasedImplementation/AbstractApiBasedModelMetada
+Error: WordPress installation doesn't verify against checksums.

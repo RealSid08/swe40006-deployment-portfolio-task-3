@@ -1,0 +1,6 @@
+[
+    {
+        "Resource": "Database",
+        "Reason": "Resource handler returned message: \"The specified KMS key [null] either doesn't exist, isn't enabled, or isn't accessible by the current user. Either specify a different key or access the key with a different user. (Service: Rds, Status Code: 400, Request ID: c45af788-e6ee-4770-ad6d-33b046483335) (SDK Attempt Count: 1)\" (RequestToken: 8ca77726-1690-886a-bce9-65b8c0ebdf13, HandlerErrorCode: InvalidRequest)"
+    }
+]

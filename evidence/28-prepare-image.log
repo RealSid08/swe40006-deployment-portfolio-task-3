@@ -1,0 +1,2 @@
+Image prepared: web services stopped, local DB removed, runtime DB credentials removed.
+Capture an encrypted AMI now. Launch-template user data restores runtime configuration.

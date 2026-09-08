@@ -1,0 +1,36 @@
+{
+    "Min": 2,
+    "Desired": 2,
+    "Max": 4,
+    "Instances": [
+        {
+            "InstanceId": "i-087efba22378e2e7b",
+            "InstanceType": "t3.micro",
+            "AvailabilityZone": "ap-southeast-2a",
+            "AvailabilityZoneId": "apse2-az1",
+            "LifecycleState": "InService",
+            "HealthStatus": "Healthy",
+            "LaunchTemplate": {
+                "LaunchTemplateId": "lt-06c537d7daa8903de",
+                "LaunchTemplateName": "LaunchTemplate_oHATjVEUkq7m",
+                "Version": "1"
+            },
+            "ProtectedFromScaleIn": false
+        },
+        {
+            "InstanceId": "i-0bb92c27a165aad8c",
+            "InstanceType": "t3.micro",
+            "AvailabilityZone": "ap-southeast-2b",
+            "AvailabilityZoneId": "apse2-az3",
+            "LifecycleState": "InService",
+            "HealthStatus": "Healthy",
+            "LaunchTemplate": {
+                "LaunchTemplateId": "lt-06c537d7daa8903de",
+                "LaunchTemplateName": "LaunchTemplate_oHATjVEUkq7m",
+                "Version": "1"
+            },
+            "ProtectedFromScaleIn": false
+        }
+    ],
+    "Suspended": []
+}

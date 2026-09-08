@@ -1,0 +1,16 @@
+/var/www/task3-restore.GYyNzj/wordpress.tar.gz: OK
+Restored file tree matches the original.
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0   0     0   0     0     0     0  --:--:-- --:--:-- --:--:--     0{
+    "status": "healthy",
+    "application": "WordPress deployment portfolio",
+    "database": "Amazon RDS MariaDB",
+    "published_posts": 3,
+    "database_tls": "TLS_AES_256_GCM_SHA384",
+    "node": "510ad5d2",
+    "php": "8.3.33",
+    "checked_at": "2026-09-08T14:11:32+00:00"
+}
+Restored application is serving successfully from the downloaded files.
+100   282   0   282   0     0 10769     0  --:--:-- --:--:-- --:--:-- 10846
