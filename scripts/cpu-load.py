@@ -7,7 +7,6 @@ scaling actions, then restores both settings after the test.
 """
 
 import argparse
-import datetime
 import subprocess
 import time
 
@@ -19,7 +18,7 @@ if not 60 <= args.seconds <= 300:
 
 workers = []
 try:
-    print("CPU test started:", datetime.datetime.now(datetime.timezone.utc).isoformat(), flush=True)
+    print("CPU test started:", time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), flush=True)
     for _ in range(2):
         workers.append(subprocess.Popen(["yes"], stdout=subprocess.DEVNULL))
     time.sleep(args.seconds)
@@ -28,4 +27,4 @@ finally:
         worker.terminate()
     for worker in workers:
         worker.wait(timeout=5)
-    print("CPU test finished:", datetime.datetime.now(datetime.timezone.utc).isoformat(), flush=True)
+    print("CPU test finished:", time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()), flush=True)
