@@ -25,8 +25,18 @@ print("CREATE DATABASE IF NOT EXISTS wordpress CHARACTER SET utf8mb4 COLLATE utf
 print("CREATE USER IF NOT EXISTS 'wpapp'@'localhost' IDENTIFIED BY '%s';" % c['password'])
 print("GRANT ALL PRIVILEGES ON wordpress.* TO 'wpapp'@'localhost';")
 PY
-wp --allow-root --path=/var/www/html core download --version=7.1
-wp --allow-root --path=/var/www/html core verify-checksums --version=7.1
+download_dir=$(mktemp -d)
+trap 'rm -rf "$download_dir"' EXIT
+curl -fsSL --retry 3 https://wordpress.org/wordpress-7.1.tar.gz -o "$download_dir/wordpress.tar.gz"
+# Native tar preserves long file names and avoids the PHP extractor's memory use.
+tar -xzf "$download_dir/wordpress.tar.gz" -C "$download_dir"
+wp --allow-root --path="$download_dir/wordpress" core verify-checksums --version=7.1
+if [[ -e /var/www/html-before-install ]]; then
+  echo 'A previous installation backup exists; inspect it before proceeding.' >&2
+  exit 1
+fi
+mv /var/www/html /var/www/html-before-install
+mv "$download_dir/wordpress" /var/www/html
 install -m 644 "$script_dir/../wordpress/wp-config.php" /var/www/html/wp-config.php
 python3 - <<'PY'
 import secrets
