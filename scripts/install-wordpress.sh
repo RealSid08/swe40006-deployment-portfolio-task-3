@@ -3,6 +3,7 @@ set -euo pipefail
 umask 077
 site_url=${1:?Usage: install-wordpress.sh PUBLIC_URL}
 script_dir=$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)
+cloud-init status --wait
 # shellcheck source=/dev/null
 source /opt/task3/environment
 if [[ -f /var/www/html/wp-config.php ]]; then
