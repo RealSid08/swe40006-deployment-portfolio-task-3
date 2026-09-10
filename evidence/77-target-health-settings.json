@@ -1,0 +1,28 @@
+{
+    "TargetGroups": [
+        {
+            "TargetGroupArn": "arn:aws:elasticloadbalancing:ap-southeast-2:373665158296:targetgroup/task3-Targe-YPWLYWNM5VFG/1e74ad67f9434381",
+            "TargetGroupName": "task3-Targe-YPWLYWNM5VFG",
+            "Protocol": "HTTP",
+            "Port": 80,
+            "VpcId": "vpc-0dbcc08f047770478",
+            "HealthCheckProtocol": "HTTP",
+            "HealthCheckPort": "traffic-port",
+            "HealthCheckEnabled": true,
+            "HealthCheckIntervalSeconds": 30,
+            "HealthCheckTimeoutSeconds": 5,
+            "HealthyThresholdCount": 2,
+            "UnhealthyThresholdCount": 3,
+            "HealthCheckPath": "/health.php",
+            "Matcher": {
+                "HttpCode": "200"
+            },
+            "LoadBalancerArns": [
+                "arn:aws:elasticloadbalancing:ap-southeast-2:373665158296:loadbalancer/app/task3--LoadB-SWRuo2lnwDRm/0998dc4815d8b76e"
+            ],
+            "TargetType": "instance",
+            "ProtocolVersion": "HTTP1",
+            "IpAddressType": "ipv4"
+        }
+    ]
+}
